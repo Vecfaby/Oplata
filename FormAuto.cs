@@ -76,6 +76,11 @@ namespace Oplata
             finally { }
 
         }
+
+        private void FormAuto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 
