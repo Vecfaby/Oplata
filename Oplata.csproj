@@ -59,6 +59,12 @@
     <Compile Include="Formcoeficient.Designer.cs">
       <DependentUpon>Formcoeficient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formcoeficient1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formcoeficient1.Designer.cs">
+      <DependentUpon>Formcoeficient1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormExecutor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formcoeficient.resx">
       <DependentUpon>Formcoeficient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formcoeficient1.resx">
+      <DependentUpon>Formcoeficient1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormExecutor.resx">
       <DependentUpon>FormExecutor.cs</DependentUpon>

@@ -45,11 +45,18 @@
             this.coefficientTableAdapter = new Oplata.ZarplataDataSetTableAdapters.coefficientTableAdapter();
             this.tableAdapterManager = new Oplata.ZarplataDataSetTableAdapters.TableAdapterManager();
             this.coefficientBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.coefficientBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.id_coefficientTextBox = new System.Windows.Forms.TextBox();
             this.juniorTextBox = new System.Windows.Forms.TextBox();
             this.middleTextBox = new System.Windows.Forms.TextBox();
@@ -60,16 +67,9 @@
             this.kvTextBox = new System.Windows.Forms.TextBox();
             this.ksTextBox = new System.Windows.Forms.TextBox();
             this.kpdeTextBox = new System.Windows.Forms.TextBox();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.coefficientBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             id_coefficientLabel = new System.Windows.Forms.Label();
             juniorLabel = new System.Windows.Forms.Label();
             middleLabel = new System.Windows.Forms.Label();
@@ -86,6 +86,116 @@
             this.coefficientBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // id_coefficientLabel
+            // 
+            id_coefficientLabel.AutoSize = true;
+            id_coefficientLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            id_coefficientLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            id_coefficientLabel.Location = new System.Drawing.Point(190, 166);
+            id_coefficientLabel.Name = "id_coefficientLabel";
+            id_coefficientLabel.Size = new System.Drawing.Size(132, 24);
+            id_coefficientLabel.TabIndex = 1;
+            id_coefficientLabel.Text = "Коэффициент:";
+            // 
+            // juniorLabel
+            // 
+            juniorLabel.AutoSize = true;
+            juniorLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            juniorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            juniorLabel.Location = new System.Drawing.Point(190, 218);
+            juniorLabel.Name = "juniorLabel";
+            juniorLabel.Size = new System.Drawing.Size(186, 24);
+            juniorLabel.TabIndex = 3;
+            juniorLabel.Text = "Начальный уровень:";
+            // 
+            // middleLabel
+            // 
+            middleLabel.AutoSize = true;
+            middleLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            middleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            middleLabel.Location = new System.Drawing.Point(190, 267);
+            middleLabel.Name = "middleLabel";
+            middleLabel.Size = new System.Drawing.Size(167, 24);
+            middleLabel.TabIndex = 5;
+            middleLabel.Text = "Средний уровень:";
+            // 
+            // seniorLabel
+            // 
+            seniorLabel.AutoSize = true;
+            seniorLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            seniorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            seniorLabel.Location = new System.Drawing.Point(190, 311);
+            seniorLabel.Name = "seniorLabel";
+            seniorLabel.Size = new System.Drawing.Size(165, 24);
+            seniorLabel.TabIndex = 7;
+            seniorLabel.Text = "Высокий уровень:";
+            // 
+            // kapLabel
+            // 
+            kapLabel.AutoSize = true;
+            kapLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            kapLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            kapLabel.Location = new System.Drawing.Point(190, 361);
+            kapLabel.Name = "kapLabel";
+            kapLabel.Size = new System.Drawing.Size(397, 24);
+            kapLabel.TabIndex = 9;
+            kapLabel.Text = "Коэффициент для анализ и проектирование:";
+            // 
+            // kuoLabel
+            // 
+            kuoLabel.AutoSize = true;
+            kuoLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            kuoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            kuoLabel.Location = new System.Drawing.Point(190, 411);
+            kuoLabel.Name = "kuoLabel";
+            kuoLabel.Size = new System.Drawing.Size(388, 24);
+            kuoLabel.TabIndex = 11;
+            kuoLabel.Text = "Коэффициент для установка оборудования:";
+            // 
+            // ktosLabel
+            // 
+            ktosLabel.AutoSize = true;
+            ktosLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            ktosLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            ktosLabel.Location = new System.Drawing.Point(190, 459);
+            ktosLabel.Name = "ktosLabel";
+            ktosLabel.Size = new System.Drawing.Size(569, 24);
+            ktosLabel.TabIndex = 13;
+            ktosLabel.Text = "Коэффициент для техническое обслуживание и сопровождение:";
+            // 
+            // kvLabel
+            // 
+            kvLabel.AutoSize = true;
+            kvLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            kvLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            kvLabel.Location = new System.Drawing.Point(190, 507);
+            kvLabel.Name = "kvLabel";
+            kvLabel.Size = new System.Drawing.Size(214, 24);
+            kvLabel.TabIndex = 15;
+            kvLabel.Text = "Коэффициент времени:";
+            // 
+            // ksLabel
+            // 
+            ksLabel.AutoSize = true;
+            ksLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            ksLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            ksLabel.Location = new System.Drawing.Point(190, 557);
+            ksLabel.Name = "ksLabel";
+            ksLabel.Size = new System.Drawing.Size(229, 24);
+            ksLabel.TabIndex = 17;
+            ksLabel.Text = "Коэффициент сложности:";
+            // 
+            // kpdeLabel
+            // 
+            kpdeLabel.AutoSize = true;
+            kpdeLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            kpdeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            kpdeLabel.Location = new System.Drawing.Point(190, 605);
+            kpdeLabel.Name = "kpdeLabel";
+            kpdeLabel.Size = new System.Drawing.Size(463, 24);
+            kpdeLabel.TabIndex = 19;
+            kpdeLabel.Text = "Коэффициент для перевода в денежный эквивалент\r\n";
             // 
             // zarplataDataSet
             // 
@@ -142,47 +252,100 @@
             this.coefficientBindingNavigator.TabIndex = 0;
             this.coefficientBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(55, 24);
+            this.bindingNavigatorCountItem.Text = "для {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
+            // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(55, 28);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // id_coefficientLabel
+            // coefficientBindingNavigatorSaveItem
             // 
-            id_coefficientLabel.AutoSize = true;
-            id_coefficientLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            id_coefficientLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            id_coefficientLabel.Location = new System.Drawing.Point(190, 166);
-            id_coefficientLabel.Name = "id_coefficientLabel";
-            id_coefficientLabel.Size = new System.Drawing.Size(132, 24);
-            id_coefficientLabel.TabIndex = 1;
-            id_coefficientLabel.Text = "Коэффициент:";
+            this.coefficientBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.coefficientBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("coefficientBindingNavigatorSaveItem.Image")));
+            this.coefficientBindingNavigatorSaveItem.Name = "coefficientBindingNavigatorSaveItem";
+            this.coefficientBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
+            this.coefficientBindingNavigatorSaveItem.Text = "Сохранить данные";
+            this.coefficientBindingNavigatorSaveItem.Click += new System.EventHandler(this.coefficientBindingNavigatorSaveItem_Click);
             // 
             // id_coefficientTextBox
             // 
@@ -193,17 +356,6 @@
             this.id_coefficientTextBox.Size = new System.Drawing.Size(201, 32);
             this.id_coefficientTextBox.TabIndex = 2;
             // 
-            // juniorLabel
-            // 
-            juniorLabel.AutoSize = true;
-            juniorLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            juniorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            juniorLabel.Location = new System.Drawing.Point(190, 218);
-            juniorLabel.Name = "juniorLabel";
-            juniorLabel.Size = new System.Drawing.Size(186, 24);
-            juniorLabel.TabIndex = 3;
-            juniorLabel.Text = "Начальный уровень:";
-            // 
             // juniorTextBox
             // 
             this.juniorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.coefficientBindingSource, "Junior", true));
@@ -212,17 +364,6 @@
             this.juniorTextBox.Name = "juniorTextBox";
             this.juniorTextBox.Size = new System.Drawing.Size(201, 32);
             this.juniorTextBox.TabIndex = 4;
-            // 
-            // middleLabel
-            // 
-            middleLabel.AutoSize = true;
-            middleLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            middleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            middleLabel.Location = new System.Drawing.Point(190, 267);
-            middleLabel.Name = "middleLabel";
-            middleLabel.Size = new System.Drawing.Size(167, 24);
-            middleLabel.TabIndex = 5;
-            middleLabel.Text = "Средний уровень:";
             // 
             // middleTextBox
             // 
@@ -233,17 +374,6 @@
             this.middleTextBox.Size = new System.Drawing.Size(201, 32);
             this.middleTextBox.TabIndex = 6;
             // 
-            // seniorLabel
-            // 
-            seniorLabel.AutoSize = true;
-            seniorLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            seniorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            seniorLabel.Location = new System.Drawing.Point(190, 311);
-            seniorLabel.Name = "seniorLabel";
-            seniorLabel.Size = new System.Drawing.Size(165, 24);
-            seniorLabel.TabIndex = 7;
-            seniorLabel.Text = "Высокий уровень:";
-            // 
             // seniorTextBox
             // 
             this.seniorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.coefficientBindingSource, "Senior", true));
@@ -252,17 +382,6 @@
             this.seniorTextBox.Name = "seniorTextBox";
             this.seniorTextBox.Size = new System.Drawing.Size(201, 32);
             this.seniorTextBox.TabIndex = 8;
-            // 
-            // kapLabel
-            // 
-            kapLabel.AutoSize = true;
-            kapLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            kapLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            kapLabel.Location = new System.Drawing.Point(190, 361);
-            kapLabel.Name = "kapLabel";
-            kapLabel.Size = new System.Drawing.Size(397, 24);
-            kapLabel.TabIndex = 9;
-            kapLabel.Text = "Коэффициент для анализ и проектирование:";
             // 
             // kapTextBox
             // 
@@ -273,17 +392,6 @@
             this.kapTextBox.Size = new System.Drawing.Size(201, 32);
             this.kapTextBox.TabIndex = 10;
             // 
-            // kuoLabel
-            // 
-            kuoLabel.AutoSize = true;
-            kuoLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            kuoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            kuoLabel.Location = new System.Drawing.Point(190, 411);
-            kuoLabel.Name = "kuoLabel";
-            kuoLabel.Size = new System.Drawing.Size(388, 24);
-            kuoLabel.TabIndex = 11;
-            kuoLabel.Text = "Коэффициент для установка оборудования:";
-            // 
             // kuoTextBox
             // 
             this.kuoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.coefficientBindingSource, "kuo", true));
@@ -292,17 +400,6 @@
             this.kuoTextBox.Name = "kuoTextBox";
             this.kuoTextBox.Size = new System.Drawing.Size(201, 32);
             this.kuoTextBox.TabIndex = 12;
-            // 
-            // ktosLabel
-            // 
-            ktosLabel.AutoSize = true;
-            ktosLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            ktosLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            ktosLabel.Location = new System.Drawing.Point(190, 459);
-            ktosLabel.Name = "ktosLabel";
-            ktosLabel.Size = new System.Drawing.Size(569, 24);
-            ktosLabel.TabIndex = 13;
-            ktosLabel.Text = "Коэффициент для техническое обслуживание и сопровождение:";
             // 
             // ktosTextBox
             // 
@@ -313,17 +410,6 @@
             this.ktosTextBox.Size = new System.Drawing.Size(201, 32);
             this.ktosTextBox.TabIndex = 14;
             // 
-            // kvLabel
-            // 
-            kvLabel.AutoSize = true;
-            kvLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            kvLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            kvLabel.Location = new System.Drawing.Point(190, 507);
-            kvLabel.Name = "kvLabel";
-            kvLabel.Size = new System.Drawing.Size(214, 24);
-            kvLabel.TabIndex = 15;
-            kvLabel.Text = "Коэффициент времени:";
-            // 
             // kvTextBox
             // 
             this.kvTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.coefficientBindingSource, "kv", true));
@@ -332,17 +418,6 @@
             this.kvTextBox.Name = "kvTextBox";
             this.kvTextBox.Size = new System.Drawing.Size(201, 32);
             this.kvTextBox.TabIndex = 16;
-            // 
-            // ksLabel
-            // 
-            ksLabel.AutoSize = true;
-            ksLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            ksLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            ksLabel.Location = new System.Drawing.Point(190, 557);
-            ksLabel.Name = "ksLabel";
-            ksLabel.Size = new System.Drawing.Size(229, 24);
-            ksLabel.TabIndex = 17;
-            ksLabel.Text = "Коэффициент сложности:";
             // 
             // ksTextBox
             // 
@@ -353,17 +428,6 @@
             this.ksTextBox.Size = new System.Drawing.Size(201, 32);
             this.ksTextBox.TabIndex = 18;
             // 
-            // kpdeLabel
-            // 
-            kpdeLabel.AutoSize = true;
-            kpdeLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            kpdeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            kpdeLabel.Location = new System.Drawing.Point(190, 605);
-            kpdeLabel.Name = "kpdeLabel";
-            kpdeLabel.Size = new System.Drawing.Size(463, 24);
-            kpdeLabel.TabIndex = 19;
-            kpdeLabel.Text = "Коэффициент для перевода в денежный эквивалент\r\n";
-            // 
             // kpdeTextBox
             // 
             this.kpdeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.coefficientBindingSource, "kpde", true));
@@ -372,79 +436,6 @@
             this.kpdeTextBox.Name = "kpdeTextBox";
             this.kpdeTextBox.Size = new System.Drawing.Size(201, 32);
             this.kpdeTextBox.TabIndex = 20;
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 28);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 28);
-            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 28);
-            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 28);
-            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 28);
-            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
-            // 
-            // coefficientBindingNavigatorSaveItem
-            // 
-            this.coefficientBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.coefficientBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("coefficientBindingNavigatorSaveItem.Image")));
-            this.coefficientBindingNavigatorSaveItem.Name = "coefficientBindingNavigatorSaveItem";
-            this.coefficientBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 28);
-            this.coefficientBindingNavigatorSaveItem.Text = "Сохранить данные";
-            this.coefficientBindingNavigatorSaveItem.Click += new System.EventHandler(this.coefficientBindingNavigatorSaveItem_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Oplata.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(205, 123);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
@@ -457,6 +448,7 @@
             this.button1.TabIndex = 22;
             this.button1.Text = "Редактировать";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -470,6 +462,16 @@
             this.button2.Text = "Назад";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Oplata.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(205, 123);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
             // 
             // Formcoeficient
             // 

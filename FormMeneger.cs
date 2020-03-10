@@ -34,5 +34,10 @@ namespace Oplata
             f2.Show();
             this.Hide();
         }
+
+        private void FormMeneger_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

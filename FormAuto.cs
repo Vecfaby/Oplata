@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -13,16 +14,13 @@ using System.Windows.Forms;
 namespace Oplata
 {
     public partial class FormAuto : Form
+
     {
         public FormAuto()
         {
             InitializeComponent();
         }
-
-        private void textBoxLogin_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        int a = 0, b = 15, s = 0, d = 15;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -32,7 +30,6 @@ namespace Oplata
                 string passUser = textBoxPass.Text;
                 ClassIniDataBase db = new ClassIniDataBase();
                 DataTable table = new DataTable();
-
 
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 SqlCommand commandagent = new SqlCommand(@"SELECT * FROM [Users] WHERE Login = @uL AND Password = @uP AND Role= 'manager'", db.GetConnection());
@@ -70,6 +67,16 @@ namespace Oplata
                         MessageBox.Show("Не верный логин или пароль");
                         textBoxLogin.Clear();
                         textBoxPass.Clear();
+                        a++;
+                        if (a==3)
+                        {
+                                    timer1.Enabled = true;
+                                    buttonRun.Enabled = false;
+                                    label5.Visible = true;
+                                    buttonRegister.Enabled=false;
+                                    textBoxLogin.Enabled = false;
+                                    textBoxPass.Enabled = false;
+                        }
                     }
                 }
             }
@@ -79,7 +86,28 @@ namespace Oplata
 
         private void FormAuto_Load(object sender, EventArgs e)
         {
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (b > 0)
+            {
+                b--;
+                label5.Text = ("Вы заблокированы. Пожалуйста подождите: " + b);
+                if (b == 0)
+                {
+                    b = d;
+                    d += 5;
+                    timer1.Enabled = false;
+                    buttonRun.Enabled = true;
+                    label5.Visible = false;
+                    buttonRegister.Enabled = true;
+                    label5.Text = "";
+                    textBoxLogin.Enabled = true;
+                    textBoxPass.Enabled = true;
+                }
+            }
+            s++;
         }
     }
     }

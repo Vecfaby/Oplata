@@ -40,5 +40,14 @@ namespace Oplata
             ifrm.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form ifr = new Formcoeficient1();
+            ifr.Left = this.Left;
+            ifr.Top = this.Top;
+            ifr.Show();
+            this.Hide();
+        }
     }
 }
