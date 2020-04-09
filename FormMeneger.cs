@@ -39,5 +39,10 @@ namespace Oplata
         {
 
         }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

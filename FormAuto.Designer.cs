@@ -39,7 +39,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +87,7 @@
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(154, 32);
             this.textBoxLogin.TabIndex = 3;
-          
+            this.textBoxLogin.Text = "kukleva";
             // 
             // textBoxPass
             // 
@@ -99,6 +98,7 @@
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.Size = new System.Drawing.Size(154, 32);
             this.textBoxPass.TabIndex = 4;
+            this.textBoxPass.Text = "123";
             // 
             // buttonRun
             // 
@@ -151,7 +151,6 @@
             this.label5.Size = new System.Drawing.Size(0, 17);
             this.label5.TabIndex = 8;
             this.label5.Visible = false;
-            //  
             // 
             // FormAuto
             // 
@@ -169,8 +168,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormAuto";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.FormAuto_Load);
+            this.Text = "Form1";            
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,7 +187,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Timer timer2;
     }
 }
 

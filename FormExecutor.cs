@@ -17,19 +17,20 @@ namespace Oplata
             InitializeComponent();
         }
 
-        private void executorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void FormExecutor_Load(object sender, EventArgs e)
         {
-            this.Validate();
-            this.executorBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.zarplataDataSet);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "zarplataDataSet1.Executor". При необходимости она может быть перемещена или удалена.
+            this.executorTableAdapter.Fill(this.zarplataDataSet1.Executor);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "zarplataDataSet1.Meneger". При необходимости она может быть перемещена или удалена.
+            this.menegerTableAdapter.Fill(this.zarplataDataSet1.Meneger);
 
         }
 
-        private void FormExecutor_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "zarplataDataSet.Executor". При необходимости она может быть перемещена или удалена.
-            this.executorTableAdapter.Fill(this.zarplataDataSet.Executor);
-
+            System.Windows.Forms.Form ifrm = new FormMeneger();
+            ifrm.Show();
+            this.Close();
         }
     }
 }

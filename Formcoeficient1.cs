@@ -37,5 +37,21 @@ namespace Oplata
             this.Close();
 
         }
+
+        private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)     
+         {
+                DialogResult dr = MessageBox.Show("Удалить запись?", "Удаление", MessageBoxButtons.OKCancel,
+               MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if (dr == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+            }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+            MessageBox.Show("Запись удалена из базы данных");
+        }
     }
 }
